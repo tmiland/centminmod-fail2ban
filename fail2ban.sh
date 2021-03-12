@@ -24,14 +24,14 @@ if [ ! -d "$DIR_TMP" ]; then
   mkdir -p $DIR_TMP
 fi
 # Debian only
-shopt -s nocasematch
-if [[ -f /etc/debian_version ]]; then
-  DISTRO=$(cat /etc/issue.net)
-fi
-if [[ ! $DISTRO == 'Debian*' ]]; then
-  echo -e "Error: Sorry, your OS is not supported."
-  exit 1;
-fi
+# shopt -s nocasematch
+# if [[ -f /etc/debian_version ]]; then
+#   DISTRO=$(cat /etc/issue.net)
+# fi
+# if [[ ! $DISTRO == 'Debian*' ]]; then
+#   echo -e "Error: Sorry, your OS is not supported."
+#   exit 1;
+# fi
 # Check if Virtualmin is installed
 if [[ ! -f /usr/sbin/virtualmin ]]; then
   echo -e "Error: Virtualmin is not installed."
