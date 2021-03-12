@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 ######################################################
 # written by George Liu (eva2000) centminmod.com
 # https://github.com/centminmod/centminmod-fail2ban
@@ -28,7 +28,7 @@ shopt -s nocasematch
 if [[ -f /etc/debian_version ]]; then
   DISTRO=$(cat /etc/issue.net)
 fi
-if [[ ! $DISTRO == 'Debian' ]]; then
+if [[ ! $DISTRO == 'Debian*' ]]; then
   echo -e "Error: Sorry, your OS is not supported."
   exit 1;
 fi
