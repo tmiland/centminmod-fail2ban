@@ -16,7 +16,7 @@ filter = nginx-auth-main
 action = csfdeny[name=nginx-auth-main]
 #action   = cloudflare
 #action   = cloudflaretoken
-logpath = /var/log/nginx/*.error.log
+logpath = /var/log/virtualmin/*_error_log
 bantime = 3600
 maxretry = 3
 findtime = 600
@@ -27,7 +27,7 @@ filter = nginx-auth
 action = csfdeny[name=nginx-auth]
 #action   = cloudflare
 #action   = cloudflaretoken
-logpath = /home/nginx/domains/*/log/access.log
+logpath = /var/log/virtualmin/*_access_log
 bantime = 3600
 maxretry = 3
 findtime = 600
@@ -38,7 +38,7 @@ filter = nginx-badrequests-main
 action = csfdeny[name=nginx-badrequests-main]
 #action   = cloudflare
 #action   = cloudflaretoken
-logpath = /var/log/nginx/*.access.log
+logpath = /var/log/virtualmin/*_access_log
 bantime = 604800
 maxretry = 1
 
@@ -48,7 +48,7 @@ filter = nginx-badrequests
 action = csfdeny[name=nginx-badrequests]
 #action   = cloudflare
 #action   = cloudflaretoken
-logpath = /home/nginx/domains/*/log/access.log
+logpath = /var/log/virtualmin/*_access_log
 bantime = 604800
 maxretry = 1
 
@@ -58,7 +58,7 @@ filter = nginx-common-main
 action = csfdeny[name=nginx-common-main]
 #action   = cloudflare
 #action   = cloudflaretoken
-logpath = /var/log/nginx/*.access.log
+logpath = /var/log/virtualmin/*_access_log
 bantime = 604800
 maxretry = 1
 findtime = 43200
@@ -69,7 +69,7 @@ filter = nginx-common
 action = csfdeny[name=nginx-common]
 #action   = cloudflare
 #action   = cloudflaretoken
-logpath = /home/nginx/domains/*/log/access.log
+logpath = /var/log/virtualmin/*_access_log
 bantime = 604800
 maxretry = 1
 findtime = 43200
@@ -80,7 +80,7 @@ filter = nginx-req-limit
 action = csfdeny[name=nginx-req-limit-main]
 #action   = cloudflare
 #action   = cloudflaretoken
-logpath = /var/log/nginx/*.error.log
+logpath = /var/log/virtualmin/*_error_log
 findtime = 600
 bantime = 7200
 maxretry = 5
@@ -91,7 +91,7 @@ filter = nginx-req-limit
 action = csfdeny[name=nginx-req-limit]
 #action   = cloudflare
 #action   = cloudflaretoken
-logpath = /home/nginx/domains/*/log/error.log
+logpath = /var/log/virtualmin/*_error_log
 findtime = 600
 bantime = 7200
 maxretry = 5
@@ -115,7 +115,7 @@ filter = nginx-conn-limit-main
 action = csfdeny[name=nginx-conn-limit-main]
 #action   = cloudflare
 #action   = cloudflaretoken
-logpath = /var/log/nginx/*.error.log
+logpath = /var/log/virtualmin/*_error_log
 findtime = 600
 bantime = 7200
 maxretry = 5
@@ -126,7 +126,7 @@ filter = nginx-conn-limit
 action = csfdeny[name=nginx-conn-limit]
 #action   = cloudflare
 #action   = cloudflaretoken
-logpath = /home/nginx/domains/*/log/error.log
+logpath = /var/log/virtualmin/*_error_log
 findtime = 600
 bantime = 7200
 maxretry = 5
@@ -137,7 +137,7 @@ filter = nginx-botsearch-main
 action = csfdeny[name=nginx-botsearch-main]
 #action   = cloudflare
 #action   = cloudflaretoken
-logpath = /var/log/nginx/*.access.log
+logpath = /var/log/virtualmin/*_access_log
 port     = http,https
 maxretry = 2
 
@@ -147,7 +147,7 @@ filter = nginx-botsearch
 action = csfdeny[name=nginx-botsearch]
 #action   = cloudflare
 #action   = cloudflaretoken
-logpath = /home/nginx/domains/*/log/access.log
+logpath = /var/log/virtualmin/*_access_log
 port     = http,https
 maxretry = 2
 
@@ -157,7 +157,7 @@ maxretry = 2
 #action = csfdeny[name=nginx-get-f5-main]
 ##action   = cloudflare
 #action   = cloudflaretoken
-#logpath = /var/log/nginx/*.access.log
+#logpath = /var/log/virtualmin/*_access_log
 #port   = http,https
 #maxretry = 15
 #findtime = 1
@@ -169,7 +169,7 @@ maxretry = 2
 #action = csfdeny[name=nginx-get-f5]
 ##action   = cloudflare
 #action   = cloudflaretoken
-#logpath = /home/nginx/domains/*/log/access.log
+#logpath = /var/log/virtualmin/*_access_log
 #port   = http,https
 #maxretry = 15
 #findtime = 1
@@ -181,7 +181,7 @@ filter = nginx-xmlrpc-main
 action = csfdeny[name=nginx-xmlrpc-main]
 #action   = cloudflare
 #action   = cloudflaretoken
-logpath = /var/log/nginx/*.access.log
+logpath = /var/log/virtualmin/*_access_log
 port = http,https
 maxretry = 6
 findtime = 60
@@ -192,7 +192,7 @@ filter = nginx-xmlrpc
 action = csfdeny[name=nginx-xmlrpc]
 #action   = cloudflare
 #action   = cloudflaretoken
-logpath = /home/nginx/domains/*/log/access.log
+logpath = /var/log/virtualmin/*_access_log
 port = http,https
 maxretry = 6
 findtime = 60
@@ -203,7 +203,7 @@ filter  = nginx-401-main
 action = csfdeny[name=nginx-401-main]
 #action   = cloudflare
 #action   = cloudflaretoken
-logpath = /var/log/nginx/*.access.log
+logpath = /var/log/virtualmin/*_access_log
 port = http,https
 maxretry = 10
 findtime = 60
@@ -214,7 +214,7 @@ filter  = nginx-401
 action = csfdeny[name=nginx-401]
 #action   = cloudflare
 #action   = cloudflaretoken
-logpath = /home/nginx/domains/*/log/access.log
+logpath = /var/log/virtualmin/*_access_log
 port = http,https
 maxretry = 10
 findtime = 60
@@ -225,7 +225,7 @@ filter  = nginx-403-main
 action = csfdeny[name=nginx-403-main]
 #action   = cloudflare
 #action   = cloudflaretoken
-logpath = /var/log/nginx/*.access.log
+logpath = /var/log/virtualmin/*_access_log
 port = http,https
 maxretry = 10
 findtime = 60
@@ -236,7 +236,7 @@ filter  = nginx-403
 action = csfdeny[name=nginx-403]
 #action   = cloudflare
 #action   = cloudflaretoken
-logpath = /home/nginx/domains/*/log/access.log
+logpath = /var/log/virtualmin/*_access_log
 port = http,https
 maxretry = 10
 findtime = 60
@@ -247,7 +247,7 @@ filter  = nginx-404-main
 action = csfdeny[name=nginx-404-main]
 #action   = cloudflare
 #action   = cloudflaretoken
-logpath = /var/log/nginx/*.access.log
+logpath = /var/log/virtualmin/*_access_log
 port = http,https
 maxretry = 10
 findtime = 60
@@ -258,7 +258,7 @@ filter  = nginx-404
 action = csfdeny[name=nginx-404]
 #action   = cloudflare
 #action   = cloudflaretoken
-logpath = /home/nginx/domains/*/log/access.log
+logpath = /var/log/virtualmin/*_access_log
 port = http,https
 maxretry = 10
 findtime = 60
@@ -269,7 +269,7 @@ findtime = 60
 #action = csfdeny[name=nginx-w00tw00t-main]
 ##action   = cloudflare
 #action   = cloudflaretoken
-#logpath = /var/log/nginx/*.access.log
+#logpath = /var/log/virtualmin/*_access_log
 #port   = http,https
 #maxretry = 1
 #bantime  = 86400
@@ -280,7 +280,7 @@ findtime = 60
 #action = csfdeny[name=nginx-w00tw00t]
 ##action   = cloudflare
 #action   = cloudflaretoken
-#logpath = /home/nginx/domains/*/log/access.log
+#logpath = /var/log/virtualmin/*_access_log
 #port   = http,https
 #maxretry = 1
 #bantime  = 86400
@@ -291,7 +291,7 @@ filter = phpmyadmin-cmm
 action = csfdeny[name=phpmyadmin-cmm]
 #action   = cloudflare
 #action   = cloudflaretoken
-logpath = /var/log/nginx/*.access.log
+logpath = /var/log/virtualmin/*_access_log
 port = http,https
 bantime = 3600
 maxretry = 5
@@ -303,7 +303,7 @@ filter = phpmyadmin-other
 action = csfdeny[name=phpmyadmin-other]
 #action   = cloudflare
 #action   = cloudflaretoken
-logpath = /home/nginx/domains/*/log/access.log
+logpath = /var/log/virtualmin/*_access_log
 port = http,https
 bantime = 3600
 maxretry = 5
@@ -315,7 +315,7 @@ filter = adminer-main
 action = csfdeny[name=adminer-main]
 #action   = cloudflare
 #action   = cloudflaretoken
-logpath = /var/log/nginx/*.access.log
+logpath = /var/log/virtualmin/*_access_log
 port = http,https
 bantime = 3600
 maxretry = 5
@@ -327,7 +327,7 @@ filter = adminer
 action = csfdeny[name=adminer]
 #action   = cloudflare
 #action   = cloudflaretoken
-logpath = /home/nginx/domains/*/log/access.log
+logpath = /var/log/virtualmin/*_access_log
 port = http,https
 bantime = 3600
 maxretry = 5
@@ -339,7 +339,7 @@ filter = wordpress-auth-main
 action = csfdeny[name=wordpress-auth-main]
 #action   = cloudflare
 #action   = cloudflaretoken
-logpath = /var/log/nginx/*.access.log
+logpath = /var/log/virtualmin/*_access_log
 port = http,https
 maxretry = 3
 findtime = 60
@@ -350,7 +350,7 @@ filter = wordpress-auth
 action = csfdeny[name=wordpress-auth]
 #action   = cloudflare
 #action   = cloudflaretoken
-logpath = /home/nginx/domains/*/log/access.log
+logpath = /var/log/virtualmin/*_access_log
 port = http,https
 maxretry = 3
 findtime = 60
@@ -361,7 +361,7 @@ filter = wordpress-comment-main
 action = csfdeny[name=wordpress-comment-main]
 #action   = cloudflare
 #action   = cloudflaretoken
-logpath = /var/log/nginx/*.access.log
+logpath = /var/log/virtualmin/*_access_log
 port = http,https
 bantime = 3600
 maxretry = 5
@@ -373,7 +373,7 @@ filter = wordpress-comment
 action = csfdeny[name=wordpress-comment]
 #action   = cloudflare
 #action   = cloudflaretoken
-logpath = /home/nginx/domains/*/log/access.log
+logpath = /var/log/virtualmin/*_access_log
 port = http,https
 bantime = 3600
 maxretry = 5
@@ -385,7 +385,7 @@ filter = wordpress-pingback-main
 action = csfdeny[name=wordpress-pingback-main]
 #action   = cloudflare
 #action   = cloudflaretoken
-logpath = /var/log/nginx/*.access.log
+logpath = /var/log/virtualmin/*_access_log
 #backend  = polling
 journalmatch =
 port = http,https
@@ -399,7 +399,7 @@ filter = wordpress-pingback
 action = csfdeny[name=wordpress-pingback]
 #action   = cloudflare
 #action   = cloudflaretoken
-logpath = /home/nginx/domains/*/log/access.log
+logpath = /var/log/virtualmin/*_access_log
 #backend  = polling
 journalmatch =
 port = http,https
@@ -429,7 +429,7 @@ action = csfdeny[name=wordpress-fail2ban-plugin]
 #action   = cloudflare
 #action   = cloudflaretoken
 logpath = /var/log/auth.log
-          /var/log/secure
+          #/var/log/secure
 bantime  = 259200
 maxretry = 1
 findtime = 7200
@@ -440,7 +440,7 @@ filter = vbulletin-main
 action = csfdeny[name=vbulletin-main]
 #action   = cloudflare
 #action   = cloudflaretoken
-logpath = /var/log/nginx/*.access.log
+logpath = /var/log/virtualmin/*_access_log
 port = http,https
 bantime = 28800
 maxretry = 3
@@ -452,7 +452,7 @@ filter = vbulletin
 action = csfdeny[name=vbulletin]
 #action   = cloudflare
 #action   = cloudflaretoken
-logpath = /home/nginx/domains/*/log/access.log
+logpath = /var/log/virtualmin/*_access_log
 port = http,https
 bantime = 28800
 maxretry = 3
@@ -464,7 +464,7 @@ filter = shells-main
 action = csfdeny[name=shells-main]
 #action   = cloudflare
 #action   = cloudflaretoken
-logpath = /var/log/nginx/*.access.log
+logpath = /var/log/virtualmin/*_access_log
 bantime = 604800
 maxretry = 1
 findtime = 86400
@@ -475,7 +475,7 @@ filter = shells
 action = csfdeny[name=shells]
 #action   = cloudflare
 #action   = cloudflaretoken
-logpath = /home/nginx/domains/*/log/access.log
+logpath = /var/log/virtualmin/*_access_log
 bantime = 604800
 maxretry = 1
 findtime = 86400
@@ -484,7 +484,7 @@ findtime = 86400
 enabled = false
 port = http,https
 filter = http-xensec-main
-logpath = /var/log/nginx/*.access.log
+logpath = /var/log/virtualmin/*_access_log
 #number of occurances
 maxretry = 5
 findtime = 60
@@ -499,7 +499,7 @@ action = csfdeny[name=http-xensec-main]
 enabled = false
 port = http,https
 filter = http-xensec
-logpath = /home/nginx/domains/*/log/access.log
+logpath = /var/log/virtualmin/*_access_log
 #number of occurances
 maxretry = 5
 findtime = 60
@@ -516,7 +516,7 @@ filter = joomla-auth-main
 action = csfdeny[name=joomla-auth-main]
 #action   = cloudflare
 #action   = cloudflaretoken
-logpath = /var/log/nginx/*.access.log
+logpath = /var/log/virtualmin/*_access_log
 port = http,https
 maxretry = 5
 bantime = 7200
@@ -528,7 +528,7 @@ filter = joomla-auth
 action = csfdeny[name=joomla-auth]
 #action   = cloudflare
 #action   = cloudflaretoken
-logpath = /home/nginx/domains/*/log/access.log
+logpath = /var/log/virtualmin/*_access_log
 port = http,https
 maxretry = 5
 bantime = 7200
@@ -540,7 +540,7 @@ filter = magento-main
 action = csfdeny[name=magento-main]
 #action   = cloudflare
 #action   = cloudflaretoken
-logpath = /var/log/nginx/*.access.log
+logpath = /var/log/virtualmin/*_access_log
 port = http,https
 maxretry = 5
 bantime = 7200
@@ -552,7 +552,7 @@ filter = magento
 action = csfdeny[name=magento]
 #action   = cloudflare
 #action   = cloudflaretoken
-logpath = /home/nginx/domains/*/log/access.log
+logpath = /var/log/virtualmin/*_access_log
 port = http,https
 maxretry = 5
 bantime = 7200
