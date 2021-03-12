@@ -28,7 +28,7 @@ shopt -s nocasematch
 if [[ -f /etc/debian_version ]]; then
   DISTRO=$(cat /etc/issue.net)
 fi
-if [ ! $DISTRO == 'Debian' ]; then
+if [[ ! $DISTRO == 'Debian' ]]; then
   echo -e "Error: Sorry, your OS is not supported."
   exit 1;
 fi
@@ -275,7 +275,7 @@ install() {
   wget -cnv -O $FAIL2BAN_DIR/filter.d/adminer.conf https://github.com/$GITHUB_REPO/raw/master/filter.d/adminer.conf
 
   echo "[DEFAULT]" > $FAIL2BAN_DIR/jail.local
-  $IGNOREIP >> $FAIL2BAN_DIR/jail.local
+  echo "ignoreip = 127.0.0.1/8 ::1 $USERIP $SERVERIPS" >> /etc/fail2ban/jail.local
   wget -cnv -O $FAIL2BAN_DIR/jail.local.download https://github.com/$GITHUB_REPO/raw/master/jail.local
   sed -i '/\[DEFAULT\]/d' $FAIL2BAN_DIR/jail.local.download
   sed -i '/ignoreip/d' $FAIL2BAN_DIR/jail.local.download
