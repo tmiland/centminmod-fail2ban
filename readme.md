@@ -1,4 +1,8 @@
-# fail2ban for centminmod.com LEMP stacks
+# fail2ban for Debian 10 with Virtualmin
+
+Forked from: [centminmod-fail2ban](https://github.com/centminmod/centminmod-fail2ban)
+
+## fail2ban for centminmod.com LEMP stacks
 
 [fail2ban](https://github.com/fail2ban/fail2ban) 0.10+ setup for [centminmod.com LEMP stacks](https://centminmod.com) with [CSF Firewall](https://centminmod.com/csf_firewall.html). CentOS EPEL Yum repo fail2ban version is using older fail2ban 0.9.6+, while below instructions are for fail2ban 0.10+ which now supports IPv6 addresses and improved performance. Suggestions, corrections and bug fixes are welcomed
 
@@ -1003,4 +1007,3 @@ Then set log level back to info
 
     fail2ban-client get loglevel
     fail2ban-client set loglevel info
-
